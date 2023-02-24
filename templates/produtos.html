@@ -1,6 +1,24 @@
 {# templates/produtos.html #}
-
 {% include "inc/head.html" %}
 <h1>Produtos</h1>
 <p>Listagem de produtos</p>
+
+<p>Última atualização{{ "now"|date('d/m/Y H:i:s', 'America/Sao_Paulo')}}</p>
+
+<table border="1">
+	<tr>
+		<th>Produto</th>
+		<th>Preço</th>
+	</tr>
+
+	{% for prod in produtos %}
+
+		<tr>
+			<td>{{prod.nome}}</td>
+			<td>R$ {{prod.preco|number_format(2,',', '.')}}</td>
+		</tr>
+
+	{% endfor %}
+</table>
+
 {% include "inc/foot.html" %}
