@@ -1,5 +1,7 @@
-{% if aconteceu_erro %}
-Aconteceu um erro 😢
+{% if erro == 1 %}
+Usuário ou senha inválidos! 🤣
+{% elseif erro == 2 %}
+Você está tentando acessar uma página restrita, safadinho! 🤨
     {% endif %}
 
 <form action="login_verifica.php" method="post">
