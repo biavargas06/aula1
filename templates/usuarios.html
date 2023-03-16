@@ -1,0 +1,36 @@
+{% include "inc/head.html" %}
+
+<h1>Usuários</h1>
+<p>Listagem de usuários</p>
+
+<table border="1">
+	<tr>
+		<th>Nome</th>
+        <th>E-mail</th>
+        <th>Username</th>
+		<th>Admin</th>
+        <th>Ativo</th>
+	</tr>
+
+	{% for usr in usuarios %}
+
+		<tr>
+			<td>{{usr.nome}}</td>
+            <td>{{usr.email}}</td>
+            <td>{{usr.username}}</td>
+			<td>{{usr.admin}}</td>
+            <td>{{usr.ativo}}</td>
+            <td><a href="usuario_apagar.php?id={{usr.id}}">Apagar</a></td>
+    	</tr>
+
+    {% else %}
+        <tr>
+            <td colspan="2"></td>
+         </tr>
+	{% endfor %}
+</table>
+<button>
+<a href="novo_usuario.php">Novo usário</a>
+</button>
+
+{% include "inc/foot.html" %}
