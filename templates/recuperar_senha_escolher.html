@@ -1,9 +1,21 @@
+{% if msg %}
+<div style= background-color:pink;>
+{{ msg }}
+</div>
+{% endif %}
+
 <form action="recuperar_senha_escolher.php" method="post">
+<input type="hidden" name="token" value="{{token}}">
 <div>
 Digita a senha nova aí, sem errar
 </div>
 <div>
-<input type="password" name="senha">
+<input type="password" id="senha" name="senha">
+<input type="password" id="senha_confirma" name="senha_confirma">
+
+<input type="button" id="olho" value="👁️‍🗨️">
 </div>
 <input type="submit" value="Gravar">
 </form>
+
+<script src="js/olho.js"></script>
