@@ -5,20 +5,19 @@
 
 <table border="1">
 	<tr>
+        <th>Username</th>
 		<th>Nome</th>
         <th>E-mail</th>
-        <th>Username</th>
 		<th>Admin</th>
         <th>Ativo</th>
         <th>Apagar</th>
 	</tr>
 
 	{% for usr in usuarios %}
-
 		<tr>
+        <td> <a href="usuario_ver.php?id={{usr.id}}">{{usr.username}}</a></td>
 			<td>{{usr.nome}}</td>
             <td>{{usr.email}}</td>
-            <td>{{usr.username}}</td>
 			<td>{{usr.admin}}</td>
             <td>{{usr.ativo}}</td>
             <td><a href="usuario_apagar.php?id={{usr.id}}">Apagar</a></td>
