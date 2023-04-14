@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteRule ^([a-zA-z0-9_-]+)/?$ router.php?pagina=$1
+</IfModule>
