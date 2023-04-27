@@ -16,3 +16,5 @@ $usr->update([
 'email' => $email,
 'username' => $username
 ], $id);
+header('location:/usuarios');
+die;

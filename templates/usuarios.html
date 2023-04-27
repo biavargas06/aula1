@@ -1,6 +1,10 @@
-{% include "inc/head.html" %}
+{% extends "inc/base.html" %}
 
+{% block conteudo %}
+{% block titulo %}
 <h1>Usuários</h1>
+{% endblock %}
+
 <p>Listagem de usuários</p>
 
 <table border="1">
@@ -15,12 +19,12 @@
 
 	{% for usr in usuarios %}
 		<tr>
-        <td> <a href="usuario_ver.php?id={{usr.id}}">{{usr.username}}</a></td>
+        <td> <a href="/usuario_ver/{{usr.id}}">{{usr.username}}</a></td>
 			<td>{{usr.nome}}</td>
             <td>{{usr.email}}</td>
 			<td>{{usr.admin}}</td>
             <td>{{usr.ativo}}</td>
-            <td><a href="usuario_apagar.php?id={{usr.id}}">Apagar</a></td>
+            <td><a href="/usuario_apagar/{{usr.id}}">Apagar</a></td>
     	</tr>
 
     {% else %}
@@ -33,4 +37,4 @@
 <a href="novo_usuario.php">Novo usário</a>
 </button>
 
-{% include "inc/foot.html" %}
+{% endblock %}

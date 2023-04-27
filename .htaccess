@@ -1,4 +1,4 @@
 <IfModule mod_rewrite.c>
         RewriteEngine On
-        RewriteRule ^([a-zA-z0-9_-]+)/?$ router.php?pagina=$1
+        RewriteRule ^([a-zA-z0-9_-]+)/?([a-zA-z0-9_-]+)?/?$ router.php?pagina=$1&id=$2 [L]
 </IfModule>
