@@ -2,13 +2,15 @@
 
 {% block conteudo %}
 {% block titulo %}
-<h1>Usuários</h1>
+<h1 style= "text-align: center; color: pink">USUÁRIOS</h1>
 {% endblock %}
 
-<p>Listagem de usuários</p>
+<p style= "text-align: center">Listagem de usuários</p>
 
-<table border="1">
-	<tr>
+<table border="1" class="w-full text-sm text-left text-pink-500 dark:text-pink-400">
+
+<thead  class="text-xs text-pink-700 uppercase bg-pink-50 dark:bg-pink-700 dark:text-pink-400">
+<tr style= "text-align: center">
         <th>Username</th>
 		<th>Nome</th>
         <th>E-mail</th>
@@ -16,17 +18,19 @@
         <th>Ativo</th>
         <th>Apagar</th>
 	</tr>
+</thead>
 
-	{% for usr in usuarios %}
-		<tr>
-        <td> <a href="/usuario_ver/{{usr.id}}">{{usr.username}}</a></td>
+<tbody style= "text-align: center">
+{% for usr in usuarios %}
+		<tr style= "text-align: center" class="bg-white border-b dark:bg-pink-800 dark:border-pink-700 hover:bg-pink-50 dark:hover:bg-pink-600">
+        <td scope="row" class="px-6 py-4 font-medium text-pink-900 whitespace-nowrap dark:text-white"> <a href="/usuario_ver/{{usr.id}}">{{usr.username}}</a></td>
 			<td>{{usr.nome}}</td>
             <td>{{usr.email}}</td>
 			<td>{{usr.admin}}</td>
             <td>{{usr.ativo}}</td>
-            <td><a href="/usuario_apagar/{{usr.id}}">Apagar</a></td>
+            <td><a class="font-medium text-pink-600 dark:text-pink-500 hover:underline" href="/usuario_apagar/{{usr.id}}">Apagar</a></td>
     	</tr>
-
+</tbody>
     {% else %}
         <tr>
             <td colspan="2"></td>
@@ -38,3 +42,5 @@
 </button>
 
 {% endblock %}
+
+	
